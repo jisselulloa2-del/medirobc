@@ -19,13 +19,13 @@
    (Estilo original, versión de mayor calidad)
    ========================================= */
 :root {
-    --bg-dark: #03120e;
+    --bg-dark: #8C2E5D;
     --bg-card: rgba(8, 28, 22, 0.8);
     --bg-card-hover: rgba(14, 42, 33, 0.9);
-    --med-blue: #00a884;
-    --med-cyan: #00f5c4;
-    --med-teal: #38ef7d;
-    --text-light: #f4fbf9;
+    --med-blue: #C75283;
+    --med-cyan: #1A0015;
+    --med-teal: #FFB6C1;
+    --text-light: #FFD1DC;
     --text-muted: #83a79d;
     --glass-border: rgba(0, 245, 196, 0.22);
     --glass-border-glow: rgba(0, 245, 196, 0.65);
