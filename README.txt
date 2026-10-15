@@ -358,7 +358,7 @@ section { padding: 7rem 8%; }
         <canvas id="particles-canvas" aria-hidden="true"></canvas>
         <div class="hero-content">
             <span class="badge-health"><i class="fa-solid fa-heart-pulse"></i> Robótica Sanitaria y Quirúrgica</span>
-            <h1>EVOLUCIÓN DE LA ROBÓTICA MÉDICA</h1>
+            <h1 style="color:red;">EVOLUCIÓN DE LA ROBÓTICA MÉDICA</h1>
             <p>Desde las primeras asistencias estereotácticas de precisión hasta los sistemas quirúrgicos autónomos guiados por IA de última generación.</p>
             <a href="#historia" class="btn-health">EXPLORAR HISTORIA Y AVANCES <i class="fa-solid fa-arrow-right"></i></a>
         </div>
