@@ -116,7 +116,7 @@ img { max-width: 100%; display: block; }
 }
 .hero-content h1 {
     font-size: 3rem; margin-bottom: 1.2rem; line-height: 1.15;
-    background: linear-gradient(135deg, #ffffff 30%, var(--med-cyan) 80%);
+    background: linear-gradient(90deg, #0052D4, #4364F7, #00c6ff);) 80%);
     -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
 }
 .hero-content p { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 2.2rem; }
