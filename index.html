@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoboMedix | Innovación Avanzada en Robótica Médica y Quirúrgica</title>
+    <!-- Fuentes de Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00f2fe;
+            --secondary: #4facfe;
+            --accent: #00c6ff;
+            --bg-dark: #070b14;
+            --bg-card: #0f172a;
+            --bg-card-hover: #1e293b;
+            --text-light: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: rgba(0, 242, 254, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* Cabecera y Logotipo */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(7, 11, 20, 0.92);
+            backdrop-filter: blur(12px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 6%;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 900;
+            font-size: 1.6rem;
+            color: var(--text-light);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--primary);
+            text-shadow: 0 0 12px rgba(0, 242, 254, 0.6);
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            box-shadow: 0 0 20px rgba(0, 242, 254, 0.5);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+            text-shadow: 0 0 8px rgba(0, 242, 254, 0.4);
+        }
+
+        /* Marquesina */
+        .marquee-container {
+            background: linear-gradient(90deg, #0052D4, #4364F7, #00c6ff);
+            color: #fff;
+            padding: 12px 0;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-top: 81px;
+            overflow: hidden;
+            white-space: nowrap;
+            box-shadow: 0 4px 20px rgba(0, 82, 212, 0.4);
+        }
+
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 30s linear infinite;
+        }
+
+        .marquee-content span {
+            margin-right: 60px;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 90px 8%;
+            min-height: 85vh;
+            gap: 60px;
+            background: radial-gradient(circle at 80% 20%, rgba(0, 242, 254, 0.08) 0%, transparent 40%);
+        }
+
+        .hero-text {
+            flex: 1.2;
+        }
+
+        .badge-tag {
+            display: inline-block;
+            background: rgba(0, 242, 254, 0.1);
+            color: var(--primary);
+            border: 1px solid var(--border-color);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .hero-text h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.2rem;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, var(--text-light), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-text p {
+            color: var(--text-muted);
+            font-size: 1.15rem;
+            margin-bottom: 35px;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: #050811;
+            padding: 14px 32px;
+            border-radius: 30px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 0 25px rgba(0, 242, 254, 0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 35px rgba(0, 242, 254, 0.8);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text-light);
+            border: 2px solid var(--border-color);
+            padding: 14px 32px;
+            border-radius: 30px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: rgba(0, 242, 254, 0.05);
+        }
+
+        .hero-image {
+            flex: 1;
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
+            border: 2px solid var(--border-color);
+        }
+
+        /* Secciones Generales */
+        .section {
+            padding: 90px 8%;
+            text-align: center;
+        }
+
+        .section h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.6rem;
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+
+        .section p.subtitle {
+            color: var(--text-muted);
+            margin-bottom: 60px;
+            font-size: 1.15rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Grid de Tarjetas Profesionales */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+            text-align: left;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s, border-color 0.3s, background 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            background: var(--bg-card-hover);
+        }
+
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 30px;
+        }
+
+        .card-content h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .card-content p {
+            color: var(--text-muted);
+            font-size: 0.98rem;
+            margin-bottom: 20px;
+        }
+
+        .specs-list {
+            list-style: none;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 15px;
+        }
+
+        .specs-list li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .specs-list li::before {
+            content: "✔";
+            color: var(--primary);
+            font-size: 0.8rem;
+        }
+
+        /* Sección de Información Detallada (Explicación técnica) */
+        .info-section {
+            background: linear-gradient(180deg, var(--bg-dark), #0c1425);
+            padding: 90px 8%;
+        }
+
+        .info-container {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            text-align: left;
+        }
+
+        .info-text {
+            flex: 1;
+        }
+
+        .info-text h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+
+        .info-text p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        .info-image {
+            flex: 1;
+        }
+
+        .info-image img {
+            width: 100%;
+            border-radius: 18px;
+            border: 2px solid var(--border-color);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+
+        /* Tabla Comparativa */
+        .comparison-table-wrapper {
+            margin-top: 40px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--bg-card);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.05);
+            text-align: left;
+        }
+
+        th, td {
+            padding: 18px 25px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        th {
+            background: rgba(0, 242, 254, 0.1);
+            font-family: 'Orbitron', sans-serif;
+            color: var(--primary);
+            font-size: 0.95rem;
+        }
+
+        td {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        td:first-child {
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        /* Simulador JavaScript Interactivo Avanzado */
+        .simulator-section {
+            background: linear-gradient(180deg, #0c1425, var(--bg-dark));
+            padding: 90px 8%;
+            text-align: center;
+        }
+
+        .simulator-box {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            border-radius: 20px;
+            border: 2px solid var(--primary);
+            padding: 35px;
+            box-shadow: 0 0 40px rgba(0, 242, 254, 0.2);
+        }
+
+        .simulator-header-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.85rem;
+            color: var(--primary);
+        }
+
+        .simulator-screen {
+            background: #03060c;
+            color: #00ffcc;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 25px;
+            border-radius: 12px;
+            height: 180px;
+            overflow-y: auto;
+            text-align: left;
+            margin-bottom: 25px;
+            border: 1px solid rgba(0, 242, 254, 0.3);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .simulator-controls {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .sim-btn {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .sim-btn:hover {
+            background: var(--primary);
+            color: #000;
+            box-shadow: 0 0 20px var(--primary);
+        }
+
+        /* Pie de página */
+        footer {
+            background: #04070d;
+            padding: 50px 8%;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        footer span {
+            color: var(--primary);
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .hero, .info-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            .btn-group {
+                justify-content: center;
+            }
+            nav ul {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabecera y Logotipo -->
+    <header>
+        <a href="#" class="logo">
+            <div class="logo-icon">⚕️</div>
+            Robo<span>Medix</span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#tecnologias">Especialidades</a></li>
+                <li><a href="#explicacion">Innovación</a></li>
+                <li><a href="#comparativa">Comparativa</a></li>
+                <li><a href="#simulador">Centro de Control</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Marquesina Animada -->
+    <div class="marquee-container">
+        <div class="marquee-content">
+            <span>✨ Cirugía Laparoscópica Asistida de Alta Precisión Sub-milimétrica</span>
+            <span>|</span>
+            <span>🤖 Sistemas Inteligentes de Control Háptico Avanzado</span>
+            <span>|</span>
+            <span>🔬 Nanorobótica Médica y Administración Dirigida de Fármacos</span>
+            <span>|</span>
+            <span>⚡ Reducción Histórica del 70% en Tiempos de Recuperación Postoperatoria</span>
+        </div>
+    </div>
+
+    <!-- Sección Hero -->
+    <section class="hero" id="inicio">
+        <div class="hero-text">
+            <span class="badge-tag">Tecnología Médica de Vanguardia</span>
+            <h1>Revolucionando la Cirugía y la Salud Global</h1>
+            <p>La robótica médica fusiona la ingeniería robótica de ultra-precisión con la inteligencia artificial diagnóstica, permitiendo a los cirujanos ejecutar intervenciones complejas con una exactitud inalcanzable para el pulso humano.</p>
+            <div class="btn-group">
+                <a href="#simulador" class="btn">Iniciar Simulación</a>
+                <a href="#tecnologias" class="btn-outline">Explorar Sistemas</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1000&q=80" alt="Tecnología de Robótica Quirúrgica">
+        </div>
+    </section>
+
+    <!-- Sección de Tecnologías / Especialidades -->
+    <section class="section" id="tecnologias">
+        <h2>Áreas de Aplicación Clínica</h2>
+        <p class="subtitle">Soluciones tecnológicas especializadas diseñadas para transformar los estándares de la medicina moderna.</p>
+        
+        <div class="grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=600&q=80" alt="Cirugía Asistida">
+                <div class="card-content">
+                    <h3>Cirugía Mínimamente Invasiva</h3>
+                    <p>Brazos articulados controlados mediante consola que traducen los movimientos del cirujano en micro-acciones exactas dentro del cuerpo, eliminando el temblor natural.</p>
+                    <ul class="specs-list">
+                        <li>Incisiones menores a 1 centímetro</li>
+                        <li>Visión estereoscópica 3D en alta definición</li>
+                        <li>Menor pérdida de sangre estimada</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=600&q=80" alt="Prótesis Avanzadas">
+                <div class="card-content">
+                    <h3>Prótesis Neurorrobóticas</h3>
+                    <p>Extremidades artificiales biónicas integradas con sensores mioeléctricos que interpretan los impulsos nerviosos del paciente para devolverle movilidad fluida y natural.</p>
+                    <ul class="specs-list">
+                        <li>Retroalimentación háptica táctil</li>
+                        <li>Algoritmos de aprendizaje adaptativo</li>
+                        <li>Calibración automática por IA</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=600&q=80" alt="Nanobots Médicos">
+                <div class="card-content">
+                    <h3>Nanorobótica y Diagnóstico</h3>
+                    <p>Dispositivos microscópicos programados para navegar a través del sistema circulatorio, capaces de detectar patógenos tempranos y suministrar tratamientos con precisión celular.</p>
+                    <ul class="specs-list">
+                        <li>Orientación magnética de precisión</li>
+                        <li>Liberación controlada de fármacos</li>
+                        <li>Eliminación selectiva de tejidos dañinos</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Explicación Técnica Detallada -->
+    <section class="info-section" id="explicacion">
+        <div class="info-container">
+            <div class="info-text">
+                <span class="badge-tag">Ingeniería y Precisión</span>
+                <h3>¿Cómo Funciona la Consola Quirúrgica Robótica?</h3>
+                <p>El sistema opera bajo el principio de maestro-esclavo. El cirujano se sienta en una consola ergonómica equipada con visores ópticos 3D de alta resolución y controles manuales avanzados.</p>
+                <p>Cada movimiento de las manos del especialista es filtrado digitalmente para eliminar cualquier temblor fisiológico y escalado a proporciones microscópicas antes de ser ejecutado por los instrumentos dentro del paciente.</p>
+                <a href="#simulador" class="btn">Probar Módulo Interactivo</a>
+            </div>
+            <div class="info-image">
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1000&q=80" alt="Consola de Control Quirúrgico">
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Tabla Comparativa -->
+    <section class="section" id="comparativa">
+        <h2>Comparativa de Rendimiento Clínico</h2>
+        <p class="subtitle">Evaluación técnica entre la cirugía tradicional abierta y la asistencia mediante robótica médica avanzada.</p>
+        
+        <div class="comparison-table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Parámetro Clínico</th>
+                        <th>Cirugía Abierta Tradicional</th>
+                        <th>Cirugía Asistida por RoboMedix</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Tamaño de la Incisión</td>
+                        <td>Grande (10 a 25 cm)</td>
+                        <td>Micro-incisiones (8 a 12 mm)</td>
+                    </tr>
+                    <tr>
+                        <td>Pérdida Promedio de Sangre</td>
+                        <td>Moderada a Alta</td>
+                        <td>Mínima (Reducción estimada del 60%)</td>
+                    </tr>
+                    <tr>
+                        <td>Estancia Hospitalaria</td>
+                        <td>5 a 10 días de recuperación</td>
+                        <td>1 a 2 días o alta ambulatoria</td>
+                    </tr>
+                    <tr>
+                        <td>Precisión de Movimiento</td>
+                        <td>Limitada por el pulso humano</td>
+                        <td>Sub-milimétrica con filtrado de temblor</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Sección de Simulador Interactivo JavaScript -->
+    <section class="simulator-section" id="simulador">
+        <h2>Centro de Control y Diagnóstico RoboMedix</h2>
+        <p class="subtitle">Ejecuta rutinas de prueba en tiempo real para verificar el estado de los componentes quirúrgicos.</p>
+        
+        <div class="simulator-box">
+            <div class="simulator-header-bar">
+                <span>[ESTADO: EN LÍNEA]</span>
+                <span>CPU: 1.4% | MEM: 4.8 GB | SERVO-LINK: 100%</span>
+            </div>
+            <div class="simulator-screen" id="logScreen">
+                [SISTEMA LISTO] Servidores RoboMedix OS v5.1 inicializados correctamente.<br>
+                > Selecciona un protocolo operacional para iniciar el análisis remoto.
+            </div>
+            <div class="simulator-controls">
+                <button class="sim-btn" onclick="runSimulation('calibrar')">Calibrar Servomotores</button>
+                <button class="sim-btn" onclick="runSimulation('optica')">Activar Óptica 3D</button>
+                <button class="sim-btn" onclick="runSimulation('diagnostico')">Diagnóstico IA</button>
+                <button class="sim-btn" onclick="runSimulation('emergencia')">Protocolo de Seguridad</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2026 <span>RoboMedix</span>. Todos los derechos reservados. Desarrollado para la excelencia clínica y la innovación tecnológica global.</p>
+    </footer>
+
+    <!-- Script JavaScript Interactividad -->
+    <script>
+        function runSimulation(action) {
+            const screen = document.getElementById('logScreen');
+            let message = "";
+            let timestamp = new Date().toLocaleTimeString();
+            
+            switch(action) {
+                case 'calibrar':
+                    message = `> [${timestamp}] Calibrando brazos mecánicos... Margen de error actual: 0.002 mm. ¡Calibración exitosa!`;
+                    break;
+                case 'optica':
+                    message = `> [${timestamp}] Activando cámaras estereoscópicas 4K. Resolviendo profundidad de campo quirúrgico...`;
+                    break;
+                case 'diagnostico':
+                    message = `> [${timestamp}] Red neuronal ejecutando escaneo de tejidos... Integridad del sistema al 99.8%.`;
+                    break;
+                case 'emergencia':
+                    message = `> [${timestamp}] ALERTA: Modo de seguridad pasiva activado. Bloqueo de torque en efectores finales completado con éxito.`;
+                    break;
+                default:
+                    message = `> [${timestamp}] Comando no reconocido por el núcleo del sistema.`;
+            }
+
+            screen.innerHTML += "<br>" + message;
+            screen.scrollTop = screen.scrollHeight;
+        }
+    </script>
+</body>
+</html>
